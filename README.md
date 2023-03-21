@@ -28,7 +28,7 @@ In conclusion, this paper provides some useful references for transformer model 
 
 ### Main Problem
 
-Regard of the most important choices for implementing a transformer-based processing system are:
+Regard of the most important choices for implementing a transformer-based processing system in computer vision tasks are:
 
 - the number of attention heads per transformer encoder
 - the number of transformer-encoders stacked

@@ -24,11 +24,20 @@ The paper indicates the result that if the role of context in images to be class
 
 In conclusion, this paper provides some useful references for transformer model design and optimization in the field of computer vision.
 
-** (+2 questions) **
+(+2 questions)
 
 ### Main Problem
 
+Regard of the most important choices for implementing a transformer-based processing system are:
+
+- the number of attention heads per transformer encoder
+- the number of transformer-encoders stacked
+
+The problem is: how to select these numbers? The result substantially depends on them but it is difficult to make recommendations for these choices.
+
 ### Approach
+
+The main approach to find the results is
 
 ## Architecture Overview
 

@@ -37,7 +37,7 @@ The problem is: how to select these numbers? The result substantially depends on
 
 ### Approach
 
-The main approach to find the results is
+The main approach to find the result is to implement some of the most commonly used CV datasets and test the them with different combinations of number of attention heads and transformer-encoders using transformer model.
 
 ## Architecture Overview
 

@@ -41,6 +41,18 @@ The main approach to find the results is
 
 ## Architecture Overview
 
+### Parameter Structure of a Multi-head Transformer
+
+### Measuring The Degree of Overdetermination
+
+### Computing Results Using Different Datasets
+
+### Results
+
+### Conclusions
+
+### Future Work
+
 ## Critical Analysis
 
 ## Reference

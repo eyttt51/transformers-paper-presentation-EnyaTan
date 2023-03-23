@@ -35,6 +35,8 @@ Regard of the most important choices for implementing a transformer-based proces
 
 The problem is: how to select these numbers? The result substantially depends on them but it is difficult to make recommendations for these choices.
 
+** Question 1: Any thoughts about the affect of changing number of attention heads and transformer-encoders? What do you think will happen?
+
 ### Approach
 
 The main approach to find the result is to implement some of the most commonly used CV datasets and test the them with different combinations of number of attention heads and transformer-encoders using transformer model.

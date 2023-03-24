@@ -55,7 +55,13 @@ On the other hand, increasing the number of encoders increases the parameter cou
 
 ### Measuring The Degree of Overdetermination
 
+The paper then discusses the issue of fitting a parameterized model to a dataset. Given K training examples that require fitting M outputs, this means there are MK equations to be solved. In this process, P free parameters are sought to achieve the best fit. Therefore, we have a system of MK equations with P variables. If MK = P, the system has a unique and exact solution. If MK < P, the system is underdetermined with infinitely many solutions. If MK > P, the system is overdetermined and cannot be solved exactly, only approximately. In overdetermined cases, the degree of overfitting depends on the ratio of the number of constraints to the number of parameters. This ratio can be denoted as:
 
+Q = MK/P
+
+Q refers to the ratio of the number of constraints (MK) to the number of free parameters (P) in the model. MK represents the number of output values to be fitted for K training examples, while P represents the number of free parameters in the model that are sought for the best fit.
+
+Here, Q is a metric that measures the degree of overconstraint in a system. When Q < 1, the system is underdetermined; when Q = 1, the system is just constrained; and when Q > 1, the system is overdetermined. In the case of an overdetermined system, the degree of overfitting depends on the ratio of the number of constraints to the number of parameters. If we have too many parameters in an overdetermined system, we may overfit our model and learn noise, which can lead to poor performance on new data.
 
 ### Computing Results Using Different Datasets
 

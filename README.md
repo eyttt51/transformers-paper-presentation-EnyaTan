@@ -135,6 +135,8 @@ Different CV applications exhibit different sensitivity to varying and combining
 
 Although this study provides a systematic comparison between the number of attention heads and number of consecutive transformer-encoders, the sheer number of different hyperparameters is still underrepresented. Any of the listed hyperparameters in the experiments (section 4) need the same systematic analysis as the current study.
 
+[**Question 2: In this paper, the authors use datasets from specific domains, such as the bird image classification dataset. Do you think these results can be extended to other computer vision tasks and datasets?**]
+
 ## Critical Analysis
 
 1. Although the experimental results of this paper are meaningful, their generalizability may be subject to some limitations. The experiments were only conducted on a specific image classification task and dataset, which may limit the generalizability of the conclusions. 

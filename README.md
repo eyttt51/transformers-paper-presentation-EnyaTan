@@ -79,14 +79,83 @@ For instance, if we are training a neural network for image classification with 
 
 ### Computing Results Using Different Datasets
 
+This part describes a series of model fitting experiments performed in computer vision tasks to investigate the impact of the number of attention heads and transformer encoders on model performance. The authors used several popular image datasets and optimized models with different numbers of heads and encoders for each task. Some models that used a large number of both attention heads and encoders had too many parameters and did not perform well. The authors present some results, including models with four encoders and any number of attention heads, and models with four attention heads and any number of encoders. In the following, a cross-section of the results is presented:
+
+- four transformer-encoders and any number of attention heads;
+- four attention heads and any number of transformer-encoders.
+
+Also, it describes a series of model experiments in computer vision tasks. The author optimized the model by varying the number of attention heads and Transformer encoder. The performance of the model was tested on both the training and test sets. The results showed a relationship between the performance of the model and the number of parameters - the fewer parameters, the better the performance. The author used simple data augmentation techniques to help the model better learn, such as random flipping, rotation, and cropping. Additionally, the author used the AdamW algorithm to optimize the model's performance during training.
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f4.png"/></div>
+
+The x-axis of the figs is the determination ratio Q, in logarithmic scale (so that the value 100 corresponds to Q = 1).
+
 ### Results
+
+**1. Dataset MNIST**
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/d1.png"/></div>
+
+The results are substantially more sensitive to the lack of transformer-encoders: the rightmost configurations with four heads but one or two transformer-encoders have a poor performance. By contrast, using only one or two heads leads only to a moderate performance loss. In other words, it is more productive to stack more transformer-encoders than to use many heads. This is not surprising for simple images such as those of digits. The context-dependency of image patches can be expected to be rather low and to require only a simple attention mechanism with a moderate number of heads.
+
+**2. Dataset CIFAR-100**
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/d2.png"/></div>
+
+The results are more sensitive to the lack of transformer-encoders than to that of heads. How far a high number of transformer-encoders would be helpful, cannot be assessed because of getting then into the region of Q < 1. With this training set size, a reduction of some transformer parameters such as key, query, and value width would be necessary.
+
+**3. Dataset CUB-200-2011**
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/d3.png"/></div>
+
+The cross-entropies for the training and the test sets are mostly consistent due to the high determination ratio Q. There are relatively small differences between small numbers of heads and transformer-encoders. Both categories seem to be comparable. This suggests, in contrast to the datasets treated above, a relatively large contribution of context to the classification performance — multiple heads are as powerful as multiple transformer-encoders. This is not unexpected in the given domain: the habitat of the bird in the image background may constitute a key contribution to classifying the species.
+
+**4. Dataset places365**
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/d4.png"/></div>
+
+There are hardly any differences between variants with varying heads and those varying transformer-encoders. With a given total number of parameters (and thus a similar ratio Q), both categories seem to be equally important. It can be conjectured that there is a relatively strong contribution of context to the classification performance can be assumed.
+
+**5. Dataset imagenet**
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/d5.png"/></div>
+
+Compared to the other experiments, the determination ratio is very high (103 to 104) which means that the number of parameters in the classification network is too small and even larger stacks of transformer-encoders with more attention heads could decrease the loss even further. Looking at the varying number of attention heads, it can be seen that their number has a low impact on the performance.
 
 ### Conclusions
 
+Determining the appropriate number of self-attention heads on one hand and, on the other hand, the number of transformer-encoder layers is an important choice for CV tasks using the Transformer architecture. A key decision concerns the total number of parameters to ensure good generalization performance of the fitted model. The determination ratio Q, as de-fined in section 3, is a reliable measure: values significantly exceeding unity (e.g., Q > 4) lead to test set loss similar to that of the training set. This sets the boundaries within which the number of heads and the number of transformer-encoders can be chosen.
+
+Different CV applications exhibit different sensitivity to varying and combining both numbers.
+
+- If the role of context in images to be classified can be assumed to be small, it is favorable to “invest” the parameters into multiple transformer-encoders. With too few transformer-encoders, the performance will rapidly deteriorate. Simultaneously, a low number of attention heads (such as one or two) is sufficient.
+- In classifying objects whose class may heavily depend on the context within the image (i.e., the meaning of a patch being dependent on other patches), the number of attention heads is equally important as that of transformer-encoders.
+
 ### Future Work
+
+Although this study provides a systematic comparison between the number of attention heads and number of consecutive transformer-encoders, the sheer number of different hyperparameters is still underrepresented. Any of the listed hyperparameters in the experiments (section 4) need the same systematic analysis as the current study.
 
 ## Critical Analysis
 
+1. Although the experimental results of this paper are meaningful, their generalizability may be subject to some limitations. The experiments were only conducted on a specific image classification task and dataset, which may limit the generalizability of the conclusions. 
+2. In addition, the hyperparameter settings used in the paper may not be applicable to all cases, such as different input image sizes and patch sizes. Therefore, caution is needed when extrapolating these results to other domains, and further research is needed to determine the optimal hyperparameter combinations.
+
 ## Reference
+
+Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., and Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In International Conference on Learning Representations, page 21, Vienna, Austria.
+
+Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. Dataset, University of Toronto.
+
+Krizhevsky, A., Sutskever, I., and Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. In Advances in Neural Information Processing Systems, volume 25. Curran Associates, Inc.
+
+Lecun, Y., Bottou, L., Bengio, Y., and Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324.
+
+Li, F., Li, S., Fan, X., Li, X., and Chang, H. (2022). Structural Attention Enhanced Continual Meta-Learning for Graph Edge Labeling Based Few-Shot Remote Sensing Scene Classification. Remote Sensing, 14(3):485.
+
+Loshchilov, I. and Hutter, F. (2019). Decoupled Weight Decay Regularization. 1711.05101.
+
+Wah, C., Branson, S., Welinder, P., Perona, P., and Belongie, S. (2011). The Caltech-UCSD Birds-200-2011 Dataset. Dataset CNS-TR-2011-001, California Institute of Technology, Pasadena, CA.
+
+Zhou, B., Lapedriza, A., Khosla, A., Oliva, A., and Torralba, A. (2018). Places: A 10 Million Image Database for Scene Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 40(6):1452–1464.
 
 ## Video Recording

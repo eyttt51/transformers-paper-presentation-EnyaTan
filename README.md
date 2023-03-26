@@ -63,6 +63,20 @@ Q refers to the ratio of the number of constraints (MK) to the number of free pa
 
 Here, Q is a metric that measures the degree of overconstraint in a system. When Q < 1, the system is underdetermined; when Q = 1, the system is just constrained; and when Q > 1, the system is overdetermined. In the case of an overdetermined system, the degree of overfitting depends on the ratio of the number of constraints to the number of parameters. If we have too many parameters in an overdetermined system, we may overfit our model and learn noise, which can lead to poor performance on new data.
 
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f2.png"/></div>
+
+E is the MSE, σ^2 is the noise variance, P is the number of model parameters, M is the number of training samples, and K is the number of outputs.
+
+This equation suggests that the MSE decreases with an increasing number of training samples (M), decreasing number of model parameters (P), or increasing number of outputs (K). However, the decrease in MSE is limited by the quality factor (Q) of the system. When Q is high, the decrease in MSE with more training data is slower, indicating a higher risk of overfitting.
+
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f.png"/></div>
+
+The formula represents the prediction error, where σ^2 is the variance of noise, with Q representing the degree of overdetermination of the system. In parameter fitting, the prediction error consists of the imprecision of the model and noise. If both the training and testing sets represent the statistical population, the level of noise is identical to that in the training set. The values of the constants c and Q in the formula are influenced by factors such as the size of the training set, the number of model parameters, and the model structure.
+
+This discusses the variation of mean squared error (MSE) for the training and testing sets with changes in the number of training samples and model parameters. It also emphasizes the importance of having a model structure that is expressive enough to capture the input-output relationship of the real system and the impact of the number of parameters.
+
+For instance, if we are training a neural network for image classification with a small amount of training data and a large number of parameters, the model may overfit the training data and perform poorly on the testing set. Conversely, if we have a large amount of training data but a small number of parameters, the model may underfit the training data and fail to capture the input-output relationship of the real system. Therefore, in choosing the number of model parameters, people need to balance model complexity and interpretability with model performance on the testing set.
+
 ### Computing Results Using Different Datasets
 
 ### Results

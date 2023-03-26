@@ -131,11 +131,11 @@ Different CV applications exhibit different sensitivity to varying and combining
 - If the role of context in images to be classified can be assumed to be small, it is favorable to “invest” the parameters into multiple transformer-encoders. With too few transformer-encoders, the performance will rapidly deteriorate. Simultaneously, a low number of attention heads (such as one or two) is sufficient.
 - In classifying objects whose class may heavily depend on the context within the image (i.e., the meaning of a patch being dependent on other patches), the number of attention heads is equally important as that of transformer-encoders.
 
+[**Question 2: In this paper, the authors use datasets from specific domains, such as the bird image classification dataset. Do you think these results can be extended to other computer vision tasks and datasets?**]
+
 ### Future Work
 
 Although this study provides a systematic comparison between the number of attention heads and number of consecutive transformer-encoders, the sheer number of different hyperparameters is still underrepresented. Any of the listed hyperparameters in the experiments (section 4) need the same systematic analysis as the current study.
-
-[**Question 2: In this paper, the authors use datasets from specific domains, such as the bird image classification dataset. Do you think these results can be extended to other computer vision tasks and datasets?**]
 
 ## Critical Analysis
 

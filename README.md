@@ -77,6 +77,10 @@ This discusses the variation of mean squared error (MSE) for the training and te
 
 For instance, if we are training a neural network for image classification with a small amount of training data and a large number of parameters, the model may overfit the training data and perform poorly on the testing set. Conversely, if we have a large amount of training data but a small number of parameters, the model may underfit the training data and fail to capture the input-output relationship of the real system. Therefore, in choosing the number of model parameters, people need to balance model complexity and interpretability with model performance on the testing set.
 
+<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f4.png"/></div>
+
+The x-axis of the figs is the determination ratio Q, in logarithmic scale (so that the value 100 corresponds to Q = 1).
+
 ### Computing Results Using Different Datasets
 
 This part describes a series of model fitting experiments performed in computer vision tasks to investigate the impact of the number of attention heads and transformer encoders on model performance. The authors used several popular image datasets and optimized models with different numbers of heads and encoders for each task. Some models that used a large number of both attention heads and encoders had too many parameters and did not perform well. The authors present some results, including models with four encoders and any number of attention heads, and models with four attention heads and any number of encoders. In the following, a cross-section of the results is presented:
@@ -85,10 +89,6 @@ This part describes a series of model fitting experiments performed in computer 
 - four attention heads and any number of transformer-encoders.
 
 Also, it describes a series of model experiments in computer vision tasks. The author optimized the model by varying the number of attention heads and Transformer encoder. The performance of the model was tested on both the training and test sets. The results showed a relationship between the performance of the model and the number of parameters - the fewer parameters, the better the performance. The author used simple data augmentation techniques to help the model better learn, such as random flipping, rotation, and cropping. Additionally, the author used the AdamW algorithm to optimize the model's performance during training.
-
-<div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f4.png"/></div>
-
-The x-axis of the figs is the determination ratio Q, in logarithmic scale (so that the value 100 corresponds to Q = 1).
 
 ### Results
 

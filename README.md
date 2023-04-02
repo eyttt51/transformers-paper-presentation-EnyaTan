@@ -67,7 +67,7 @@ Here, Q is a metric that measures the degree of overconstraint in a system. When
 
 E is the MSE, σ^2 is the noise variance, P is the number of model parameters, M is the number of training samples, and K is the number of outputs.
 
-This equation suggests that the MSE decreases with an increasing number of training samples (M), decreasing number of model parameters (P), or increasing number of outputs (K). However, the decrease in MSE is limited by the quality factor (Q) of the system. When Q is high, the decrease in MSE with more training data is slower, indicating a higher risk of overfitting.
+This equation suggests that the MSE decreases with an increasing number of training samples (K), decreasing number of model parameters (P), or increasing number of outputs (M). However, the decrease in MSE is limited by the quality factor (Q) of the system. When Q is high, the decrease in MSE with more training data is slower.
 
 <div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f.png"/></div>
 

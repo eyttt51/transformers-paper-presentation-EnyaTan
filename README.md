@@ -161,3 +161,5 @@ Wah, C., Branson, S., Welinder, P., Perona, P., and Belongie, S. (2011). The Cal
 Zhou, B., Lapedriza, A., Khosla, A., Oliva, A., and Torralba, A. (2018). Places: A 10 Million Image Database for Scene Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 40(6):1452–1464.
 
 ## Video Recording
+
+https://youtu.be/1ixt9XnpN5Y

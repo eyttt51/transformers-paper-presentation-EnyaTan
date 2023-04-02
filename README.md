@@ -33,7 +33,7 @@ Regard of the most important choices for implementing a transformer-based proces
 
 The problem is: how to select these numbers? The result substantially depends on them but it is difficult to make recommendations for these choices.
 
-[**Question 1: Any thoughts about the affect of changing number of attention heads and transformer-encoders? What do you think will happen?**]
+[**Question 1: Any thoughts about the affect of changing number of attention heads and transformer-encoders? How will the number of the total parameter change? What do you think will happen?**]
 
 ### Approach
 

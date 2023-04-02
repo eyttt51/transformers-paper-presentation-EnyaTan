@@ -65,7 +65,7 @@ Here, Q is a metric that measures the degree of overconstraint in a system. When
 
 <div align=center><img src="https://github.com/eyttt51/transformers-paper-presentation-EnyaTan/blob/main/figures/f2.png"/></div>
 
-E is the MSE, σ^2 is the noise variance, P is the number of model parameters, M is the number of training samples, and K is the number of outputs.
+E is the MSE, σ^2 is the noise variance, P is the number of model parameters, K is the number of training samples, and M is the number of outputs.
 
 It reflects the dependency of MSE on the number of training samples.
 

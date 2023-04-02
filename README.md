@@ -37,7 +37,7 @@ The problem is: how to select these numbers? The result substantially depends on
 
 ### Approach
 
-The main approach to find the result in this paper is to implement some of the most commonly used CV datasets and test the them with different combinations of number of attention heads and transformer-encoders using the transformer model.
+The main approach to find the result in this paper is to implement some of the most commonly used CV datasets and test the them with different combinations of number of attention heads and transformer-encoders using the transformer model. By modifying the determination ratio to see the training and testing set of losses, the result can be generated to indicate different choices of Attention Heads and Transformer-Encoders.
 
 ## Architecture Overview
 
